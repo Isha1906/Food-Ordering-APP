@@ -1,0 +1,54 @@
+
+<body background="../assets/mandal.jpg">
+  <ul>
+    <div class="right">
+      
+    <li><a routerLink="/"> 
+      <button  class="btn btn-outline-default"  style="background:none;"><b>Login</b></button></a></li>
+     
+    <li><a routerLink="/profile"> 
+
+      <button  class="btn btn-outline-default" style="background:none;">
+        <img src="./assets/person-circle.svg" style="height: 26px; width: 40px;"></button></a></li>
+  </div>
+ 
+  <li><a routerLink="/home">
+    <button class="btn btn-outline-default" style="background:none;">
+      <img src="./assets/house-heart.svg" style="height: 26px; width: 40px;"></button></a></li>
+    <li><a routerLink="/cart">
+      <button class="btn btn-outline-default " style="background:none;">
+        <img src="./assets/cart-check-fill.svg" style="height: 26px; width: 40px;" >
+        <div style="font-size: 10px;"class="badge bg-danger">{{totalItem}}
+           </div> </button></a></li>
+  
+    </ul> 
+
+    <div class="CartContainer text-center">
+      <div class="popular">
+      <h4>Popular today </h4>
+       </div>
+        <ng-container *ngFor="let item of proDetails">
+
+          <div class="card col-md-3 scrollmenu">
+           <ul>
+            <li >
+              <div class="text-center">
+                <img src="{{item.imgadd}}" >
+               </div>
+               <div class="title">
+                {{item.name}}
+               </div>
+                <div class="price" id="price">
+                Rs. {{item.price}}
+                </div>
+            </li>
+           </ul>
+            <button class="btn btn-outline-danger" (click)="atc(item)" style="height: 100%;">Add</button>
+          </div>
+        </ng-container>
+        <hr style="color: black;">
+
+   	   </div>  
+
+
+       

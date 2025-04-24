@@ -1,0 +1,31 @@
+<body background="../assets/mandal.jpg">
+
+    <div class="CartContainer">
+        <h2 style="color: rgb(201, 46, 46);">Administration Login <i class="fa fa-solid fa-user"></i> </h2>
+        <h5 class="text-success"><b>{{success}}</b></h5>
+        <small class="text-danger">{{error}}</small>
+        <small class="text-danger">{{error1}}</small>
+        <form  #login="ngForm"   (ngSubmit)="adminLogin()" >
+            <div class="form-group">
+            <label class="form-label"><b>Admin Id:</b> </label>
+            <input type="name" class="form-control" placeholder="Enter your id" name="name" id="name" [(ngModel)]="admin.name" required #name="ngModel"
+            [class.is-invalid]="name.invalid && name.touched">
+        </div>
+        <div class="form-group">
+            <label class="form-label"><b>Password:</b> </label>
+            <input type="password" class="form-control " placeholder="Enter your password" name="password" id="password" [(ngModel)]="admin.password" required #password="ngModel"
+            [class.is-invalid]="password.invalid && password.touched">  
+
+           </div>
+           <div>
+            <br>
+            <button type="submit" class="btn btn-success">Login</button>  
+            <button type="reset" class="btn btn-danger">Reset</button>
+            <small><a routerLink="/adminpage"><button class="btn btn-outline-default">Forgot Password <u>click here!</u></button></a> </small>
+           </div>
+          
+        </form>
+       
+    </div>
+</body>
+<router-outlet></router-outlet>

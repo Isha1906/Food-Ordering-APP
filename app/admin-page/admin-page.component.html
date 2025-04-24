@@ -1,0 +1,142 @@
+<body background="../assets/mandal.jpg" >
+    <ul>
+        <li><img src="../assets/bitebuzzlogo.png" class="src" style="height: 80px;"></li>
+        <li class="cent"><h3>Admin's Panel</h3></li>
+    </ul>
+<table>
+<thead style="position: fixed; margin-left: 50px; ">
+  <th >
+    <button style="margin-right: 20px;" (click)="toggleCollapse(0)" class="btn btn-success">User List </button>
+</th>
+
+<th style="margin-right: 20px;">
+  <button style="margin-right: 20px;" (click)="toggleCollapse(1)" class="btn btn-success" >Add Product</button>
+  
+</th>
+<th style="margin-right: 20px;">
+  <button style="margin-right: 20px;" (click)="toggleCollapse(2)" class="btn btn-success">Product Details</button>
+ 
+</th>
+</thead>
+<br>
+<br>
+<tbody style="position: fixed; width: 100%;" >
+  <tr >
+    <td>
+      <div [visible]="visible[0]" cCollapse >  
+      
+        <h4 class="text-center">Users List</h4><hr/>
+            <div class="card scrollmenu" style="align-items: center; width: 1300px;">             
+                <div class="card-table " style="width: 1300px;" >                     
+                     <table class="table table-responsive">
+                        <thead>
+                          <th>User Id</th>
+                          <th>User Name</th>
+                          <th>Email Id </th>
+                          <th>Address</th>
+                          <th>Password</th>  
+                          <th>Phone Number</th>                
+                          <th>Action</th>
+                        </thead>
+                        <tbody>
+                          <tr style="width: 1350px;" *ngFor="let user of userDetails, let i=index">
+                            <td>{{i+1}} </td>
+                            <td>{{user.name}} </td>                         
+                            <td>{{user.email}} </td>
+                            <td>{{user.address}} </td>                           
+                            <td class="hidetext" >{{user.password}}</td>
+                            <td >{{user.phone}} </td>
+                            <td><button class="btn btn-danger">Remove</button></td>                          
+                          </tr>                                                  
+                        </tbody>           
+                      </table>                 
+                     </div>                                         
+            </div>       
+          
+  </div> </td>
+  
+   <td><div [visible]="visible[1]" cCollapse class=" shadow " style="margin-left: 300px;">
+    <div class="card " style="width: 500px;"  >
+     
+      <!-- <img src="./assets/bitebuzzlogo.png" class="card-img-top" style="width: 50px;"> -->
+      <div class="card-body ">
+      
+        <small class="text-success">{{success}}</small>
+        <h5 class="card-title" style="text-align: center;"><b>Add Items</b></h5>
+        <form  #add="ngForm" (ngSubmit)="addProduct()">
+          <div class="form-group">
+          <label class="form-label"><b>Product Name:</b> </label>
+          <input type="text" class="form-control" placeholder="Enter item" name="name" id="name" [(ngModel)]="product.name" required #name="ngModel"
+          [class.is-invalid]="name.invalid && name.touched">
+      </div>
+      
+         <div class="form-group">
+          <label class="form-label"><b>Price:</b> </label>
+          <input type="number" class="form-control" placeholder="Enter the price for the item" name="price" id="price" [(ngModel)]="product.price" required #price="ngModel"
+          [class.is-invalid]="price.invalid && price.touched">
+         </div>
+         <div class="form-group">
+          <label class="form-label"><b>Image Address:</b> </label>
+          <input type="address" class="form-control" placeholder="Enter image address" name="imgadd" id="imgadd" [(ngModel)]="product.imgadd" required #imgadd="ngModel"
+          [class.is-invalid]="imgadd.invalid && imgadd.touched">
+         </div>
+       <div>
+          <br>
+          <button type="submit" class="btn btn-success">
+            <span class="spinner-border spinner-border-sm" role="status" ></span>
+            Submit
+          </button>
+          <button type="reset" class="btn btn-danger">Reset</button>
+         </div>
+        
+      </form>
+      </div>
+    </div>
+
+</div></td>
+<td><div [visible]="visible[2]" cCollapse class=" shadow " style="margin-left: 30px;">
+
+  <h4 class="text-center">Product List</h4><hr/>
+  <div class="card scrollmenu" style="align-items: center; width: 1200px; padding-left: 10px;">             
+      <div class="card-table " style="width: 1100px; margin-left: 30px;" >                     
+           <table class="table table-responsive " >
+              <thead>
+                <th>Product Id</th>
+                <th>Product Name</th>
+                <th>Price(Rs.) </th>
+                <th>Image Address</th>                               
+                <th>Action</th>
+              </thead>
+              <tbody>
+                <tr style="width: 1000px;" *ngFor="let item of productDetails, let i=index">
+                  <td>{{i+1}} </td>
+                  <td>{{item.name}} </td>                         
+                  <td>{{item.price}} </td>
+                  <td>{{item.imgadd}} </td>                                          
+                  <td><button class="btn btn-danger">Remove</button></td>                          
+                </tr>                                                  
+              </tbody>           
+            </table>                 
+           </div>                                         
+  </div> 
+
+</div> </td>
+  </tr>
+</tbody>
+
+</table>
+    
+      
+    
+
+    
+    
+
+   
+    
+   
+    
+    
+
+    <router-outlet></router-outlet>
+   

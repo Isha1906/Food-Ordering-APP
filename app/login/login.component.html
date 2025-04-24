@@ -1,0 +1,45 @@
+<ul>
+    <div class="right">
+        
+    <li><a routerLink="/"> <button  class="btn btn-outline-primary" ><b>Login</b></button></a></li>
+    <li><a routerLink="/profile"> <button  class="btn btn-outline-primary" ><img src="./assets/person-circle.svg" width="32" height="28"></button></a></li>
+  </div>
+  <li><img src="../assets/bitebuzzlogo.png" class="src"></li>
+  
+    </ul>
+<body  background="../assets/mandal.jpg">
+
+    <div class="CartContainer">
+        <h1 style="color: rgb(247, 100, 124);">Login</h1>
+        <h5 class="text-success">{{success}}</h5>
+        <h5 class="text-danger">{{error}}</h5>
+        <h5 class="text-danger">{{error1}}</h5>
+        <form  #login="ngForm" (ngSubmit)="userLogin()">
+            <div class="form-group">
+            <label class="form-label"><b>Email Id:</b> </label>
+            <input type="email" class="form-control" placeholder="enter your email" name="email" id="email" [(ngModel)]="user.email" required #email="ngModel"
+            [class.is-invalid]="email.invalid && email.touched">
+        </div>
+        <div class="form-group">
+            <label class="form-label"><b>Password:</b> </label>
+            <input type="password" class="form-control" placeholder="enter your password" name="password" id="password" [(ngModel)]="user.password" required #password="ngModel"
+            [class.is-invalid]="password.invalid && password.touched">
+           </div>
+           <div>
+            <br>
+            <button type="submit" class="btn btn-success">Login</button> 
+            <small>New User? Register Here<a routerLink="/registration"><button class="btn btn-outline-default">SignUp</button></a> </small>
+           </div>
+          
+       <div>
+        <br>
+        <div class="admin">
+        <a routerLink="/admin"><button class="btn btn-outline-success"> Admin's Login Click Here</button></a> 
+        </div>
+      
+       </div>
+        </form>
+        <a routerLink="/payment"><button class="btn btn-outline-success"> Payment</button></a> 
+    </div>
+</body>
+<router-outlet></router-outlet>
