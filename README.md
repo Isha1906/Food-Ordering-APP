@@ -13,4 +13,4 @@ tracking, and admin controls.
 1. Food_order:  Contains Backend related files
 2. app : Contains frontend related files
 3. assets : contain all the related photos, stickers used in this mini project.
-4. Screenshots : Sample layout are present
+4. Layout : Sample screenshots are present
