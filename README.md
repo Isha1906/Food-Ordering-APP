@@ -1,3 +1,4 @@
+<img width="1366" height="768" alt="login" src="https://github.com/user-attachments/assets/5b7227a4-269b-4cf3-8940-69718c879599" />
 The Food App(online Food ordring system) is a full-stack web application
 developed using Spring Boot (backend), AngularJS (frontend),
 and MySQL (database). The application provides a platform for
