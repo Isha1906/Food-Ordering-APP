@@ -1,17 +1,26 @@
-<img width="1366" height="768" alt="login" src="https://github.com/user-attachments/assets/5b7227a4-269b-4cf3-8940-69718c879599" />
-The Food App(online Food ordring system) is a full-stack web application
-developed using Spring Boot (backend), AngularJS (frontend),
-and MySQL (database). The application provides a platform for
-users to explore various menus, place orders, and get food delivered
-at their doorstep. It also features an admin panel for restaurant and
-order management.
+# Food Ordering Application
 
-The system follows a modular architecture with RESTful APIs for
-smooth communication between the frontend and backend. It
-offers essential features like user registration/login, restaurant and
-menu display, cart and checkout functionality, real-time order
-tracking, and admin controls.
-1. Food_order:  Contains Backend related files
-2. app : Contains frontend related files
-3. assets : contain all the related photos, stickers used in this mini project.
-4. Layout : Sample screenshots are present
+## Description
+A full-stack food ordering web application built using Spring Boot and Angular.
+It allows users to browse food items, place orders, and manage accounts.
+
+## Tech Stack
+- Backend: Java, Spring Boot, REST APIs
+- Frontend: Angular, HTML, CSS
+- Database: MySQL
+- Tools: Git, Postman
+
+## Features
+- User authentication and role-based authorization
+- CRUD operations for food items and orders
+- REST API based backend
+- MySQL database integration
+
+## Architecture
+Controller → Service → Repository
+
+## How to Run
+1. Clone the repository
+2. Configure MySQL database
+3. Run Spring Boot backend
+4. Start Angular frontend
